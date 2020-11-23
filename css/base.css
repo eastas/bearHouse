@@ -1,0 +1,1301 @@
+/* -----------------------------------reset--- */
+
+body,
+nav,
+header,
+footer,
+div,
+span,
+a,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd,
+dt,
+section,
+select,
+option,
+input,
+img,
+textarea {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+li {
+    list-style: none;
+}
+
+a,
+textarea,
+input,
+option,
+select {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    display: inline-block;
+}
+
+img {
+    vertical-align: bottom;
+    font-size: 0;
+}
+
+table,
+tr,
+td,
+th {
+    border-spacing: 0;
+}
+
+.wrap {
+    margin: 0 2.6667vw;
+}
+
+
+/* --------------只显示3行超出隐藏 */
+
+
+/* .news-preview {
+    font-size: 12px;
+    color: #999999;
+    line-height: 22px;
+    height: 86px;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #fafafa;
+    border: 1px solid #9a9a9a2c;
+} */
+
+
+/* --------------chrome-3行超出省略显示- */
+
+.webkit-3row {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+
+/* --------------chrome-两行超出省略显示- */
+
+.webkit-2row {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.row {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* --------------只显示两行超出隐藏 */
+
+
+/* .news-right p {
+    width: 100%;
+    font-size: 14px;
+    color: #999999;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    margin: 24px 0;
+} */
+
+
+/* ------全局字体-开始--- */
+
+h1 {
+    font-size: 4.8vw;
+    color: #333;
+}
+
+p,
+a,
+li,
+span {
+    font-size: 3.2vw;
+    color: #333;
+}
+
+
+/* nav 字体 */
+
+.subnav a,
+.welcome-main>span {
+    font-size: 3.7333vw;
+    color: #fff;
+}
+
+
+/* 底部的区域的字体颜色 */
+
+.footer-call>span,
+.footer-in>p,
+.welcome-main>a {
+    color: #14916a;
+}
+
+.footer-msg li,
+.fast-fast a,
+.footer>p {
+    color: #555;
+}
+
+.footer-in p,
+footer h1 {
+    font-size: 3.7333vw;
+}
+
+
+/* 底部详细联系方式图标的大小 */
+
+.footer-msg span {
+    font-size: 2.1333vw;
+}
+
+
+/* -公有标题字体 */
+
+.title div {
+    font-size: 2.6667vw;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+
+/* ----------img通用属性 */
+
+img {
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ------顶部导航     开始----- */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 12vw;
+    background-color: rgba(246, 246, 246, .7);
+    z-index: 7;
+}
+
+.nav>div {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+
+/* ----导航左图标 */
+
+.nav img {
+    width: 23.6vw;
+    height: 7.3333vw;
+}
+
+
+/* ----导航右边图标 */
+
+.nav-bt {
+    position: absolute;
+    width: 5.3333vw;
+    height: 5.3333vw;
+    right: 2.6667vw;
+}
+
+.nav-bt span {
+    position: absolute;
+    display: block;
+    font-size: 5.3333vw;
+    z-index: 1;
+}
+
+.nav-bt span:nth-child(2) {
+    color: #fff;
+    z-index: 8;
+    display: none;
+}
+
+.nav input {
+    position: absolute;
+    right: 2.2667vw;
+    display: block;
+    width: 6.3333vw;
+    height: 6.3333vw;
+    z-index: 9;
+    opacity: 0;
+}
+
+.nav-bt:active .subnav {
+    display: flex;
+}
+
+
+/* ---------点击图标控制二级导航显隐 */
+
+.nav input:checked~.subnav {
+    display: flex;
+}
+
+.nav input:checked~.nav-bt span:nth-child(2) {
+    display: block;
+}
+
+.nav input:checked~.nav-bt span:nth-child(1) {
+    display: none;
+}
+
+
+/* ----------二级导航--- */
+
+.subnav {
+    position: fixed;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 5.3333vw;
+    top: 0;
+    right: 0;
+    padding-top: 18.6667vw;
+    width: 46.2667vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 7;
+    display: none;
+}
+
+.subnav a {
+    display: block;
+    width: 36.2667vw;
+    padding: 2.1333vw 0;
+    padding-left: 5.3333vw;
+    border-top-left-radius: 3.7333vw;
+    border-bottom-right-radius: 3.7333vw;
+}
+
+.subnav a:hover {
+    color: #14916a;
+    background-color: #fff;
+}
+
+.subnav .subnav-current {
+    color: #14916a;
+    background-color: #fff;
+}
+
+.subnav a:active {
+    color: #14916a;
+    background-color: #fff;
+}
+
+
+/* ------顶部导航    结束----- */
+
+
+/* ************************************************************* */
+
+
+/* ------banner区   开始  */
+
+.banner {
+    margin-bottom: 6.6667vw;
+}
+
+.banner img {
+    width: 100vw;
+}
+
+
+/* ------banner区   结束  */
+
+
+/* *********************************************************** */
+
+
+/* -------公有标题区 开始 */
+
+.title {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2.1333vw;
+    padding-bottom: 5.3333vw;
+}
+
+.title>h1>a {
+    font-size: 4.8vw;
+}
+
+.title>h1 {
+    max-width: 100%;
+    text-align: center;
+}
+
+.title>div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-width: 51.4667vw;
+    max-width: 100%;
+    /* overflow: hidden; */
+    text-align: center;
+    /* height: 5.8667vw; */
+    padding: 2.1333vw 5.3333vw;
+    text-align: center;
+    border: 1px solid #b9b9b9;
+    border-top-left-radius: 2.9333vw;
+    border-bottom-right-radius: 2.9333vw;
+}
+
+.title>div::after {
+    position: absolute;
+    top: 0;
+    /* left: 50%; */
+    transform: translate(0, -50%);
+    width: 15.8667vw;
+    height: 0.4vw;
+    background-color: #14916a;
+    display: block;
+    content: "";
+    z-index: 1;
+}
+
+
+/* -------公有标题区 结束 */
+
+
+/* ************************************************************* */
+
+
+/* 底部区域          开始 */
+
+
+/*  底部大块背景颜色 */
+
+.footer {
+    background-color: #f3f3f3;
+}
+
+.footer-fast {
+    background-color: #fcfcfc;
+}
+
+
+/* 底部的顶部区域 开始 */
+
+.footer-top {
+    padding: 6.4vw 0;
+}
+
+.footer-icon {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    /* padding-top: 6.4vw; */
+    /* border: 1px solid red; */
+}
+
+.footer-icon img {
+    width: 25.7333vw;
+    height: 7.4667vw;
+}
+
+.footer-call {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: .5em;
+    padding: 2.6667vw 4vw;
+    margin-top: 2.1333vw;
+    margin-bottom: 5.3333vw;
+    border: 1px solid #b9b9b9;
+    z-index: 0;
+}
+
+.footer-call span {
+    color: #14916a;
+    /* max-width: 26vw; */
+}
+
+.call-number {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    gap: .8em;
+}
+
+.footer-call::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: -1%;
+    width: 102%;
+    height: 4.1333vw;
+    background-color: #f3f3f3;
+    z-index: -1;
+}
+
+.footer-msg {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3.3333vw;
+}
+
+.footer-msg>li {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+
+/* -------底部的顶部区域 结束 */
+
+
+/* ---底部 “快速导航”区域  开始  */
+
+.footer-fast {
+    /* width: 100vw; */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 4.5333vw;
+    padding-bottom: 2.6667vw;
+}
+
+.footer-fast>h1 {
+    padding: 0 2.6667vw;
+    text-align: center;
+    /* border: 1px solid rebeccapurple; */
+}
+
+.fast-nav {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 5.3333vw 0;
+    gap: 4vw;
+}
+
+.fast-nav li {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fast-nav>li>a {
+    max-width: 8em;
+    min-width: 4em;
+}
+
+.footer-fast img {
+    width: 64vw;
+    /* height: 9.6vw; */
+}
+
+
+/* ---底部 “快速导航”区域  结束  */
+
+
+/* ---底部 “快捷入口”区域  开始  */
+
+.footer-in {
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5.3333vw;
+    align-items: center;
+    padding-top: 4.5333vw;
+    padding-bottom: 2.6667vw;
+}
+
+.footer-in>h1,
+.footer-in>p {
+    padding: 0 2.6667vw;
+    text-align: center;
+    /* border: 1px solid rebeccapurple; */
+}
+
+.footer-in-box {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 1.3333vw;
+    justify-content: space-evenly;
+}
+
+.footer-in-box a {
+    font-size: 3.2vw;
+    color: #666666;
+}
+
+.footer-in-box img {
+    /* width: 5.53vw; */
+    height: 3.2vw;
+}
+
+
+/* ---底部 “快捷入口”区域  结束  */
+
+
+/* -版权 */
+
+.footer-copy {
+    border-top: 0.1333vw solid #b9b9b9;
+}
+
+.footer-copy>p {
+    text-align: center;
+    padding: 4vw 0;
+    max-width: 100%;
+}
+
+
+/* 底部区域          结束 */
+
+
+/* ************************************************** */
+
+
+/*  首页 “欢迎来到熊管家” 开始*/
+
+.index-welcome {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 8vw;
+    gap: 3.7333vw;
+}
+
+.index-welcome p {
+    /* margin-bottom: 3.7333vw; */
+}
+
+.welcome-box {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    /* justify-content: space-between; */
+    background-color: #14916a;
+    /* gap: 3.3333vw; */
+}
+
+.welcome-box a {
+    display: block;
+    border-right: 0.2667vw solid #fff;
+    /* flex-grow: 1; */
+    /* height: 100%; */
+}
+
+.welcome-box>a>img {
+    width: 38.4vw;
+    height: 100%;
+}
+
+.welcome-main {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2vw;
+    padding: 3.0667vw;
+}
+
+.welcome-main>a {
+    align-self: flex-end;
+    /* position: absolute; */
+    display: block;
+    bottom: 3.0667vw;
+    right: 3.3333vw;
+    /* color: #14916a; */
+    /* width: 36.2667vw; */
+    padding: 2vw 5.3333vw;
+    border-top-left-radius: 3.3333vw;
+    border-bottom-right-radius: 3.3333vw;
+    background-color: #fff;
+    max-width: 100%;
+}
+
+
+/*  首页 “欢迎来到熊管家” 结束*/
+
+
+/*  首页 “管家服务” 开始*/
+
+.index-service {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    gap: 2.6667vw;
+    padding-bottom: 6.6667vw;
+    /* gap: 2.6667vw; */
+}
+
+.index-service li {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    flex-grow: 1;
+    width: 40vw;
+}
+
+.index-service a {
+    display: block;
+    max-width: 100%;
+}
+
+.index-service>li a:nth-child(2) {
+    position: absolute;
+    align-self: center;
+    padding: 3.6vw 6.6667vw;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.index-service img {
+    width: 100%;
+}
+
+
+/*  首页 “管家服务” 结束*/
+
+************************************************
+/*   关于我们  “公司简介”  开始 */
+
+.company-profile {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: rgb(179, 41, 41);
+}
+
+.company-img {
+    display: block;
+    position: relative;
+    width: 100%;
+    /* box-shadow: 0 0.2667vw 1.0667vw #b9b9b9; */
+    /* z-index: -1; */
+}
+
+.company-img>img {
+    width: 100%;
+    box-shadow: 0 0.2667vw 1.0667vw #b9b9b9;
+}
+
+.company-img::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* z-index: 2; */
+}
+
+.company-article {
+    position: relative;
+    padding-bottom: 14.6667vw;
+    margin-bottom: 7.4667vw;
+    /* display: flex;
+    flex-flow: column nowrap; */
+}
+
+.company-main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 6vw;
+    padding-top: 5.2vw;
+    max-height: 38vw;
+    overflow: hidden;
+}
+
+.company-bt {
+    position: absolute;
+    right: 0;
+    bottom: 3.7333vw;
+    width: 23.0667vw;
+    height: 8vw;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #14916a;
+    border-bottom-right-radius: 4vw;
+    border-top-left-radius: 4vw;
+    z-index: 2;
+}
+
+.company-bt a {
+    position: absolute;
+    display: block;
+    color: #fff;
+    font-size: 3.7333vw;
+}
+
+.company-bt a:nth-child(2) {
+    display: none;
+}
+
+.company-article>input {
+    position: absolute;
+    display: block;
+    width: 23.0667vw;
+    height: 8vw;
+    right: 0;
+    bottom: 3.7333vw;
+    z-index: 3;
+    opacity: 0;
+}
+
+.company-article>input:checked~.company-main {
+    max-height: inherit;
+}
+
+.company-article>input:checked+.company-bt a:nth-child(1) {
+    display: none;
+}
+
+.company-article>input:checked+.company-bt a:nth-child(2) {
+    display: block;
+}
+
+
+/*   关于我们页  “公司简介”  结束 */
+
+
+/*  关于我们页  “团队展示 ”  开始 */
+
+.team-show {
+    padding-bottom: 8.5333vw;
+}
+
+.team-box {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin-bottom: 2.9333vw;
+    /* align-items: center; */
+}
+
+.team-bt {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.team-bt a {
+    width: 5.6vw;
+    height: 5.6vw;
+    display: block;
+    margin: 2.6667vw;
+    background-color: #14916a;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 5.6vw;
+    color: #fff;
+}
+
+.team-box img {
+    width: 100%;
+}
+
+.team-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.team-info b {
+    font-size: 3.7333vw;
+}
+
+.team-info>span {
+    font-size: 2.6667vw;
+    text-transform: capitalize;
+}
+
+
+/*  关于我们页  “团队展示 ”  结束*/
+
+
+/* *************************************************** */
+
+
+/*  新闻列表页  “新闻动态 ”  开始*/
+
+.news-list-box {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.news-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 3.3333vw;
+    padding: 2.6667vw 0;
+    border-bottom: 1px solid #aaa8;
+}
+
+.news-item img {
+    width: 26.1333vw;
+}
+
+.news-profile {
+    display: flex;
+    flex-flow: column;
+    gap: 3.2vw;
+    justify-content: space-between;
+}
+
+.news-profile h1>a {
+    font-weight: normal;
+    font-size: 3.7333vw;
+}
+
+.news-profile span {
+    font-size: 1.6vw;
+    color: #aaa;
+}
+
+
+/* --新闻/案例共有分页按钮  开始 */
+
+.page-bt {
+    /* width: 100%; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 4.6667vw 0;
+    /* border: 1px solid navy; */
+}
+
+.page-bt a {
+    padding-top: 2.6667vw;
+    padding-bottom: 2.1333vw;
+    padding-left: 5.2vw;
+    padding-right: 6.6667vw;
+    font-size: 3.7333vw;
+    color: #fff;
+    border-top-left-radius: 4vw;
+    border-bottom-right-radius: 4vw;
+    background-color: #14916a;
+}
+
+
+/* --新闻/案例共有分页按钮  结束 */
+
+
+/*  新闻列表页  “新闻动态 ”  结束 */
+
+
+/* **************************** */
+
+
+/*  新闻详情页  “新闻详情”  开始 */
+
+
+/* 标题 */
+
+.news-detail-box {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4vw;
+    padding-bottom: 4vw;
+}
+
+.news-detail-title {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4.2667vw;
+    padding: 4vw 0;
+    background-color: #fafafa;
+    border-top: 0.1333vw solid #aaa5;
+    border-bottom: 0.1333vw solid #aaa5;
+}
+
+.news-detail-title p {
+    display: flex;
+    gap: 1.6vw;
+}
+
+.news-detail-title b {
+    font-size: 2.6667vw;
+    color: #14916a;
+}
+
+.news-detail {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4.6667vw;
+}
+
+
+/* 文章预览 */
+
+.news-detail-info {
+    color: #999;
+}
+
+
+/* ------内容区 */
+
+.news-text img {
+    margin-top: 2.1333vw;
+    /* max-width: 100%; */
+    width: 100%;
+    /* margin: 0 auto; */
+}
+
+
+/* -----分页按钮-- */
+
+.news-detail-bt {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8vw;
+    padding: 4vw 0;
+}
+
+.news-detail-bt a {
+    background-color: #14916a;
+    padding: 2.1333vw 2.6667vw;
+    color: #fff;
+    border-top-left-radius: 4vw;
+    border-bottom-right-radius: 4vw;
+    /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */
+}
+
+.news-detail-bt a span:nth-of-type(1) {
+    color: #fff;
+    border-right: 0.1333vw solid rgba(208, 208, 208, 0.637);
+    padding: 2.1333vw 0;
+    padding-right: 2.1333vw;
+}
+
+.news-detail-bt a span:nth-of-type(2) {
+    color: #fff;
+    /* border-right: 0.1333vw solid #fff; */
+    padding: 2.1333vw 0;
+    padding-left: 2.1333vw;
+}
+
+
+/*  新闻详情页  “新闻详情 ”  结束 */
+
+
+/* 案例列表页   “案例分享”   开始 */
+
+.case-main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.6667vw;
+}
+
+.case-item {
+    /* width: 100%; */
+}
+
+.case-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.case-box::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    border: 3.7333vw solid;
+    border-color: rgba(20, 145, 106, .5) rgba(20, 145, 106, .5) transparent transparent;
+}
+
+.case-box img {
+    width: 100%;
+}
+
+.case-hidden {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5.3333vw;
+    /* top: 100%; */
+    bottom: 5.3333vw;
+    left: 5.3333vw;
+    right: 5.3333vw;
+    transform: translateY(120%);
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.case-hidden>span {
+    color: #fff;
+    font-size: 5.3333vw;
+}
+
+.case-item:active .case-hidden {
+    transform: translateY(0%);
+}
+
+
+/* 案例列表页   “案例分享”   结束*/
+
+
+/* --联系我们页  “联系我们”    开始*/
+
+
+/* 二维码区域 */
+
+.contact-code {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6.1333vw;
+    background-color: #5ab296;
+    padding: 6.6667vw;
+}
+
+.contact-code>img {
+    width: 18.1333vw;
+    border-radius: 0.8vw;
+}
+
+.contact-code-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2.6667vw;
+}
+
+.contact-code-info h1 {
+    font-size: 4.8vw;
+    color: #fff;
+}
+
+.contact-code-info span {
+    font-size: 3.2vw;
+    color: #fff;
+}
+
+
+/* ---地址联系方式详情区域 */
+
+.contact-ways {
+    background-color: #f6f6f6;
+}
+
+.contact-ways-box {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3.4667vw;
+    padding: 6vw 0;
+}
+
+
+/* ---表单区域 */
+
+.contact {
+    padding: 9.0667vw 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5.6vw;
+    /* align-items: center; */
+}
+
+.contact-form h1 {
+    text-align: center;
+}
+
+.form-item-box {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3.4667vw;
+    /* border: 1px solid red; */
+    /* align-self: flex-end; */
+}
+
+.form-item {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5.3333vw;
+    /* */
+}
+
+.form-item b {
+    color: red;
+}
+
+.form-item span {
+    display: inline-block;
+    min-width: 19vw;
+    text-align: right;
+    /* flex-grow: 1; */
+}
+
+.form-item input,
+.form-item select {
+    border: 0.1333vw solid #b9b9b9;
+    flex-grow: 1;
+    /* width: 74vw; */
+    padding: 3.0667vw 2.8vw;
+    color: #666666;
+    font-size: 3.2vw;
+    margin-right: 0.8vw;
+    background-color: #fff;
+}
+
+.form-item select,
+.form-item input[type="number"] {
+    position: relative;
+    appearance: none;
+}
+
+.form-item .angle {
+    position: absolute;
+    font-size: 8vw;
+    right: 1.3333vw;
+    flex-grow: 0;
+    z-index: 1;
+    min-width: inherit;
+}
+
+.form-bt {
+    text-align: center;
+}
+
+.form-bt>input {
+    padding: 2.6667vw 10.6667vw;
+    background-color: rgb(0, 0, 0);
+    font-size: 3.2vw;
+    color: #fff;
+    flex-grow: 0;
+    border-radius: 4vw;
+    outline: none;
+    border: none;
+    margin-top: 3.2vw;
+    min-width: 36.2667vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* --地图区域 */
+
+.map {
+    position: relative;
+}
+
+.map>input {
+    position: absolute;
+    display: block;
+    top: 0;
+    /* bottom: 0;
+    left: 0;
+    right: 0; */
+    width: 100%;
+    height: 70vw;
+    opacity: 0;
+}
+
+.map>input:checked~.map-hidden {
+    display: block;
+}
+
+.map a {
+    width: 100%;
+    display: block;
+}
+
+.map img {
+    width: 100%;
+}
+
+.map-hidden {
+    width: 100%;
+    /* height: 53.3333vw; */
+}
+
+.map-hidden {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    display: none;
+}
+
+.map-hidden>iframe {
+    width: 100%;
+    height: 150vw;
+    border: none;
+}
+
+
+/* .map:active .map-hidden {
+    display: block;
+} */
+
+
+/* --联系我们页  “联系我们”    结束*/
+
+
+/* --案例详情页 */
+
+.case-detail {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.6667vw;
+}
+
+.case-detail img {
+    width: 100%;
+}
+
+.case-detail p {
+    font-size: 1.6vw;
+    color: rgb(85, 85, 85);
+    text-indent: 2em;
+}
